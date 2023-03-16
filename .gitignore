@@ -1,0 +1,7 @@
+venv/
+tests/
+checkpoints/
+transformers/
+.DS_Store
+.idea/
+__pycache__/
