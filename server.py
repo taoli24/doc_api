@@ -9,7 +9,7 @@ from flask_sslify import SSLify
 
 app = Flask(__name__)
 CORS(app)
-sslify = SSLify(app)
+# sslify = SSLify(app)
 
 # Model configuration
 model_check_point = Path("./checkpoints/checkpoints_path_baseepoch_.pt")
@@ -29,5 +29,5 @@ def main():
 
 
 if __name__ == '__main__':
-    context = ('./ssl/server.crt', './ssl/server.key')
-    app.run(host="0.0.0.0", port=8000, debug=False, ssl_context=context)
+    # context = ('./ssl/server.crt', './ssl/server.key')
+    app.run(host="0.0.0.0", port=8000, debug=False)
