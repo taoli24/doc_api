@@ -5,9 +5,11 @@ from pathlib import Path
 import os
 from json_result import get_json
 from flask_cors import CORS
+from flask_sslify import SSLify
 
 app = Flask(__name__)
 CORS(app)
+sslify = SSLify(app)
 
 # Model configuration
 model_check_point = Path("./checkpoints/checkpoints_path_baseepoch_.pt")
@@ -27,4 +29,5 @@ def main():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=8000, debug=False)
+    context = ('./ssl/server.crt', './ssl/server.key')
+    app.run(host="0.0.0.0", port=8000, debug=False, ssl_context=context)
