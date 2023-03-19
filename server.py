@@ -28,6 +28,11 @@ def main():
     return jsonify(res)
 
 
+@app.route("/", methods=["GET"])
+def getInfo():
+    return jsonify({"Status": "The server is running"})
+
+
 if __name__ == '__main__':
     # context = ('./ssl/server.crt', './ssl/server.key')
     app.run(host="0.0.0.0", port=8000, debug=False)
